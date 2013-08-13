@@ -1,0 +1,30 @@
+de:
+  activerecord:
+    models:
+      user:
+        one: BenutzerIn
+        other: BenutzerInnen
+      role:
+        one: Rolle
+        other: Rollen
+    attributes:
+      user:
+        password: Passwort
+        password_confirmation: Passwort wiederholen
+        remember_me: Erinnere dich an mich
+        email: Email
+        reset_password_sent_at: Passwort wurde zurückgesetzt am
+        remember_created_at: Erinnere dich an mich gesetzt am
+        sign_in_count: Anzahl der Logins
+        current_sign_in_at: Eingeloggt seit
+        last_sign_in_at: Letztes mal angemeldet am
+        current_sign_in_ip: IP-Adresse des aktuellen Logins
+        last_sign_in_ip: IP-Adresse der letzten Anmeldung
+        created_at: Erstellt am
+        updated_at: Bearbeitet am
+        role: Rolle
+      role:
+        title: Name
+        created_at: Erstellt am
+        updated_at: Bearbeitet am
+        user: BenutzerIn

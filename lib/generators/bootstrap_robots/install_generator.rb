@@ -39,6 +39,14 @@ module BootstrapRobots
       # set rails to de
       gsub_file "config/application.rb", '# config.i18n.default_locale = :[a-z]*', 'config.i18n.default_locale = :de'
 
+      # add cancan rescue to ApplicationController
+      application_controller_insert = File.read(File.expand_path('../templates', __FILE__) + '/application_controller.rb')
+      gsub_file "app/controllers/application_controller.rb", 'protect_from_forgery with: :exception', application_controller_insert
+
+      # copy locale files to main app config
+      files = Dir[File.join(File.expand_path('../../../../locales', __FILE__), "*.yml")]
+      FileUtils.cp files, Rails.root.join("config/locales")
+
     end
 
     def self.next_migration_number(dirname)
