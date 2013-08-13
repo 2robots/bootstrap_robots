@@ -34,7 +34,7 @@ module BootstrapRobots
 
       # enable paper_trail
       rails_admin_insert = File.read(File.expand_path('../templates', __FILE__) + '/rails_admin_insert.rb')
-      gsub_file "config/initializers/rails_admin.rb", /# config.audit_with :paper_trail/, rails_admin_insert
+      gsub_file "config/initializers/rails_admin.rb", /# config.audit_with :paper_trail, 'User'/, rails_admin_insert
 
       # set rails to de
       gsub_file "config/application.rb", '# config.i18n.default_locale = :[a-z]*', 'config.i18n.default_locale = :de'
@@ -46,6 +46,10 @@ module BootstrapRobots
       # copy locale files to main app config
       files = Dir[File.join(File.expand_path('../../../../locales', __FILE__), "*.yml")]
       FileUtils.cp files, Rails.root.join("config/locales")
+
+      # copy models
+      files = Dir[File.join(File.expand_path('../../../../app/models', __FILE__), "*.rb")]
+      FileUtils.cp files, Rails.root.join("app/models")
 
     end
 
