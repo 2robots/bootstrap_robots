@@ -9,8 +9,12 @@
 
   # history management
   gem 'paper_trail', github: 'airblade/paper_trail', branch: 'rails4'
-  gem 'rails_admin_2robots_bootstrap', :github => '2robots/bootstrap_robots'
+
+  # bootstraping
+  gem 'bootstrap_robots', :github => '2robots/bootstrap_robots', branch: 'master'
 
 == Installation
 
   rails g bootstrap_robots:install
+
+  rake db:migrate
