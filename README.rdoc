@@ -1,3 +1,16 @@
 = BootstrapRobots
 
-This project rocks and uses MIT-LICENSE.
+== Gemfile
+
+  # Authorization & Authentication
+  gem "devise"
+  gem 'devise-i18n-views'
+  gem "cancan"
+
+  # history management
+  gem 'paper_trail', github: 'airblade/paper_trail', branch: 'rails4'
+  gem 'rails_admin_2robots_bootstrap', :github => '2robots/bootstrap_robots'
+
+== Installation
+
+  rails g bootstrap_robots:install
