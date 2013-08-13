@@ -2,6 +2,9 @@
 
 == Gemfile
 
+  # Admin interface
+  gem 'rails_admin'
+
   # Authorization & Authentication
   gem "devise"
   gem 'devise-i18n-views'
